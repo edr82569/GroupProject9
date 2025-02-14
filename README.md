@@ -132,3 +132,12 @@ CREATE TABLE ZooEvents(
     CONSTRAINT eventHasAnimal FOREIGN KEY(animalID) REFERENCES Resident_Animal(animalID)
     );
     
+###Table 14
+#Date, used to calculate transactions
+CREATE TABLE Transaction_Dates(
+	MMDDYEAR DATE,
+   	PRIMARY KEY (MMDDYEAR), 
+	CONSTRAINT datehasfoodtransaction FOREIGN KEY(MMDDYEAR) REFERENCES Ticket_Sales(tSaleDate),
+   	CONSTRAINT datehasticketsales FOREIGN KEY(MMDDYEAR) REFERENCES Food_Purchases(foodPurchaseDate),
+ 	CONSTRAINT datehasvettransaction FOREIGN KEY(MMDDYEAR) REFERENCES Vet_Transactions(vetOperationDate)
+	);
