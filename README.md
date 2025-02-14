@@ -22,7 +22,6 @@ CREATE TABLE Ticket_Sales(
  
 ###Table 3
 #Section of the Zoo, contributes to Enclosures
-##(Ex. Savannah, Jungle, etc.)
 CREATE TABLE Section(
 	sectionName VARCHAR(25), 
     sectionTheme VARCHAR(45),
