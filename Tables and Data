@@ -136,16 +136,6 @@ CREATE TABLE Zoo_Events(
     PRIMARY KEY(zooEvent),
     CONSTRAINT eventHasAnimal FOREIGN KEY(animalID) REFERENCES Resident_Animal(animalID)
     );
-    
-###Table 14
-#Date, used to calculate transactions
-CREATE TABLE Transaction_Dates(
-	MMDDYEAR DATE,
-    PRIMARY KEY (MMDDYEAR), 
-	CONSTRAINT datehasfoodtransaction FOREIGN KEY(MMDDYEAR) REFERENCES Ticket_Sales(tSaleDate),
-    CONSTRAINT datehasticketsales FOREIGN KEY(MMDDYEAR) REFERENCES Food_Purchases(foodPurchaseDate),
-    CONSTRAINT datehasvettransaction FOREIGN KEY(MMDDYEAR) REFERENCES Vet_Transactions(vetOperationDate)
-);
 
 INSERT INTO Section (sectionName, sectionTheme, sectionLocation) VALUES
 ('Savannah', 'African Grasslands', 'Northwest Corner'),
@@ -503,18 +493,3 @@ INSERT INTO Ticket_Sales (tSaleDate, amountSold, typeOfTicket) VALUES
 ('2025-01-10', 60, 'Season Pass'),
 ('2025-01-11', 130, 'Student Discount'),
 ('2025-01-12', 45, 'Employee Benefit');
-
-INSERT INTO Transaction_Dates (MMDDYEAR) VALUES
-('2025-01-01'),
-('2025-01-02'),
-('2025-01-03'),
-('2025-01-04'),
-('2025-01-05'),
-('2025-01-06'),
-('2025-01-07'),
-('2025-01-08'),
-('2025-01-09'),
-('2025-01-10'),
-('2025-01-11'),
-('2025-01-12');
-
